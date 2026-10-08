@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Galaboda Water | Pure Drinking Water Since 2004</title>
+<!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Plus Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- TOP APP BAR (Shared Component: TopNavBar) -->
+<header class="gw-header">
+  <div class="gw-container gw-header-content">
+    <!-- Brand Logo -->
+    <a class="gw-brand" href="javascript:void(0)" onclick="switchTab('Home')">
+      <img alt="Galaboda Water Logo" class="gw-brand-logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGK2clLuk05qXx9JbcHi0CcfmUyPZwjgrTyIsPbNznE_nPVwSp9ecamenv4r8yDlAKdBsy0WM2aPUzE_d2DTs-iyw-gztZMjbEFoLTdLBW453mZr1vkHoFHQ2hgm6bLk8FAD1lVgk_GPEZn4XN93RCmze8eYgb32cd3ss-BGUuT1uJbPGxwZ63xVfNTEtd4CJV6mZizNroUN92fjiVviUrsakjws59UsvDbJj8e7VY"/>
+      <div class="gw-brand-text">
+        <span class="gw-brand-title">Galaboda Water</span>
+      </div>
+    </a>
+    <!-- Desktop Navigation Links -->
+    <nav class="gw-nav-desktop" id="desktopNavLinks">
+      <button class="gw-nav-link active" data-nav="Home" onclick="switchTab('Home')">Home</button>
+      <button class="gw-nav-link" data-nav="Products" onclick="switchTab('Products')">Products</button>
+      <button class="gw-nav-link" data-nav="About Us" onclick="switchTab('About Us')">About Us</button>
+      <button class="gw-nav-link" data-nav="Corporate" onclick="switchTab('Corporate')">Corporate</button>
+      <button class="gw-nav-link" data-nav="Contact Us" onclick="switchTab('Contact Us')">Contact Us</button>
+    </nav>
+    <!-- Trailing Action Cluster -->
+    <div class="gw-header-actions">
+      <a class="gw-hotline-btn" href="tel:0542222533">
+        <span class="material-symbols-outlined gw-icon">call</span>
+        <span>Call Hotline</span>
+      </a>
+      <button class="gw-primary-btn" onclick="switchTab('Contact Us')">
+        <span>Get in Touch</span>
+        <span class="material-symbols-outlined gw-icon">arrow_forward</span>
+      </button>
+    </div>
+    <!-- Mobile Hamburger Button -->
+    <button aria-label="Open Navigation Menu" class="gw-mobile-menu-btn" id="mobileMenuOpenBtn">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</header>
+<!-- SIDE NAVIGATION DRAWER (Shared Component: SideNavBar) -->
+<div class="gw-side-drawer-backdrop" id="sideDrawerBackdrop"></div>
+<aside class="gw-side-drawer" id="sideDrawer">
+  <div class="gw-side-drawer-inner">
+    <div>
+      <!-- Side Drawer Header -->
+      <div class="gw-side-drawer-header">
+        <div class="gw-side-drawer-brand">
+          <img alt="Galaboda Water Corporate Seal Since 2004" class="gw-side-drawer-logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGK2clLuk05qXx9JbcHi0CcfmUyPZwjgrTyIsPbNznE_nPVwSp9ecamenv4r8yDlAKdBsy0WM2aPUzE_d2DTs-iyw-gztZMjbEFoLTdLBW453mZr1vkHoFHQ2hgm6bLk8FAD1lVgk_GPEZn4XN93RCmze8eYgb32cd3ss-BGUuT1uJbPGxwZ63xVfNTEtd4CJV6mZizNroUN92fjiVviUrsakjws59UsvDbJj8e7VY"/>
+          <div>
+            <h2 class="gw-side-drawer-title">Galaboda Water</h2>
+            <p class="gw-side-drawer-subtitle">Pure Hydration Since 2004</p>
+          </div>
+        </div>
+        <button aria-label="Close navigation" class="gw-close-btn" id="mobileMenuCloseBtn">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <!-- 5 Requested Navigation Items -->
+      <nav class="gw-side-nav">
+        <button class="gw-side-nav-item active" data-side="Home" onclick="switchTab('Home')">
+          <span class="material-symbols-outlined gw-icon">water_drop</span>
+          <span>Home</span>
+        </button>
+        <button class="gw-side-nav-item" data-side="Products" onclick="switchTab('Products')">
+          <span class="material-symbols-outlined gw-icon">inventory_2</span>
+          <span>Products</span>
+        </button>
+        <button class="gw-side-nav-item" data-side="About Us" onclick="switchTab('About Us')">
+          <span class="material-symbols-outlined gw-icon">verified</span>
+          <span>About Us</span>
+        </button>
+        <button class="gw-side-nav-item" data-side="Corporate" onclick="switchTab('Corporate')">
+          <span class="material-symbols-outlined gw-icon">business_center</span>
+          <span>Corporate</span>
+        </button>
+        <button class="gw-side-nav-item" data-side="Contact Us" onclick="switchTab('Contact Us')">
+          <span class="material-symbols-outlined gw-icon">contact_support</span>
+          <span>Contact Us</span>
+        </button>
+      </nav>
+      <!-- CTA in Drawer -->
+      <div class="gw-side-cta">
+        <p class="gw-side-cta-title">Bulk Industrial Supply</p>
+        <p class="gw-side-cta-desc">Custom bottled hydration for hospitality, schools, and offices.</p>
+        <button class="gw-side-cta-btn" onclick="switchTab('Corporate')">
+          Request Bulk Quote
+        </button>
+      </div>
+    </div>
+    <!-- Drawer Footer Actions -->
+    <div class="gw-side-footer">
+      <a class="gw-side-footer-link" href="tel:0542222533">
+        <span class="material-symbols-outlined gw-icon">call</span>
+        <span>Call Support: 054 2222533</span>
+      </a>
+      <a class="gw-side-footer-link" href="mailto:galabodawater1176@gmail.com">
+        <span class="material-symbols-outlined gw-icon">mail</span>
+        <span>Email Office</span>
+      </a>
+    </div>
+  </div>
+</aside>
+<!-- ==================== TAB 1: HOME PAGE ==================== -->
+<main class="tab-content active" id="tab-Home">
+<!-- Hero Section -->
+<section class="gw-hero">
+  <div class="gw-container">
+    <div class="gw-hero-grid">
+      <div class="gw-hero-content">
+        <!-- Heritage Pill -->
+        <div class="gw-hero-pill">
+          <span class="gw-hero-pill-dot"></span>
+          <span class="gw-hero-pill-text-main">Trusted Since May 2004</span>
+        </div>
+        <!-- Headline -->
+        <h1 class="gw-hero-title">
+          Pure Water. <br/>
+          <span class="gw-hero-title-highlight">Trusted for Generations.</span>
+        </h1>
+        <!-- Supporting Text -->
+        <p class="gw-hero-description">
+          Providing safe, reliable, and pristine bottled drinking water across Sri Lanka since 2004. Bottled with surgical hygiene and mineral precision under the strict standards of the Ministry of Health.
+        </p>
+        <!-- Actions Cluster -->
+        <div class="gw-hero-actions">
+          <button class="gw-btn-primary-large" onclick="switchTab('Products')">
+            <span>Explore Our Products</span>
+            <span class="material-symbols-outlined gw-icon">water_drop</span>
+          </button>
+          <button class="gw-btn-secondary-large" onclick="switchTab('Contact Us')">
+            Contact Us
+          </button>
+        </div>
+        <!-- Micro Quality Badges -->
+        <div class="gw-hero-badges">
+          <div class="gw-badge">
+            <span class="material-symbols-outlined gw-badge-icon">verified</span>
+            <span class="gw-badge-text">MOH Registered (Kuledrawatta)</span>
+          </div>
+          <div class="gw-badge">
+            <span class="material-symbols-outlined gw-badge-icon">biotech</span>
+            <span class="gw-badge-text">Multi-Stage Filtration &amp; Ozonation</span>
+          </div>
+          <div class="gw-badge">
+            <span class="material-symbols-outlined gw-badge-icon">local_shipping</span>
+            <span class="gw-badge-text">Direct Corporate Fleet Delivery</span>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Image & Showcase Card -->
+      <div class="gw-hero-visual">
+        <div class="gw-hero-card">
+          <img class="gw-hero-image" data-alt="Two premium Galaboda natural mineral water bottles with pristine condensation droplets standing upright on a pale textured stone ledge. In the background is an exquisite infinity pool with crystal turquoise water overlooking lush misty mountain forests of Nawalapitiya Sri Lanka under soft natural morning sunlight. Modern corporate luxury branding style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyEJFwhT4tgakg-iXflEtXgu4nTQ1XRV2O77SSb8RtlK_NbXKgOFHWLmP94fqhERqsnbtZCAtl0DsePPyl09eA1eZIo9Euc656C5a8-kXYsl1jdVm29aOI7XWevy3Y-SAyGlTexEFokJtVRvxq9OnZMcMiNDwM5DbV3ML9xmfySOaaoCLbzg6CyVTvr8r5JsfqvVI30Y8RNMbZp4XVjlFOaqEph3fTgjiQ9fBQ0hqX"/>
+          <div class="gw-hero-card-overlay">
+            <div>
+              <p class="gw-hero-card-title">Natural Spring Hydration</p>
+              <p class="gw-hero-card-subtitle">Untouched catchment in Nawalapitiya foothills</p>
+            </div>
+            <span class="gw-hero-card-tag">TDS &lt; 150 mg/L</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Trust & Statistics Bar -->
+<section class="gw-stats-section">
+  <div class="gw-container">
+    <div class="gw-stats-grid">
+      <div class="gw-stat-card">
+        <span class="gw-stat-value">20+</span>
+        <span class="gw-stat-title">Years of Experience</span>
+        <p class="gw-stat-desc">Dedicated to bottling excellence since establishment in May 2004.</p>
+      </div>
+      <div class="gw-stat-card">
+        <span class="gw-stat-value">Since 2004</span>
+        <span class="gw-stat-title">Islandwide Trust</span>
+        <p class="gw-stat-desc">Serving millions of satisfied consumers and commercial partners across Sri Lanka.</p>
+      </div>
+      <div class="gw-stat-card">
+        <span class="gw-stat-value">100%</span>
+        <span class="gw-stat-title">Corporate Partner</span>
+        <p class="gw-stat-desc">Uninterrupted bulk supply agreements for banks, hotels, and universities.</p>
+      </div>
+      <div class="gw-stat-card">
+        <span class="gw-stat-value">Certified</span>
+        <span class="gw-stat-title">Safety &amp; Hygiene</span>
+        <p class="gw-stat-desc">Strict adherence to Ministry of Health bottled water hygiene protocols.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Products Grid Showcase -->
+<section class="gw-products-section">
+  <div class="gw-container">
+    <div class="gw-products-header">
+      <div class="gw-products-header-content">
+        <div class="gw-section-pill">Standard Bottled Range</div>
+        <h2 class="gw-section-title">Complete Hydration Lineup</h2>
+        <p class="gw-section-desc">
+          From everyday personal refreshments to high-capacity office dispensers, each bottle is sealed at our Kuledrawatta facility.
+        </p>
+      </div>
+      <button class="gw-btn-link-large" onclick="switchTab('Products')">
+        <span>View Comprehensive Technical Catalog</span>
+        <span class="material-symbols-outlined gw-icon">arrow_forward</span>
+      </button>
+    </div>
+    <!-- Lineup Banner -->
+    <div class="gw-products-banner">
+      <div class="gw-products-banner-grid">
+        <div>
+          <img class="gw-products-banner-image" data-alt="Studio lineup shot displaying a gradient of pure bottled water containers including 500ml, 1000ml, 1500ml, 5000ml jug with handle, and a large 19 liter water dispenser bottle next to an electric water cooler stand. Pristine studio lighting with crisp water reflections on a clean glossy white surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk2YjicaRpHP6XDly55XLsWs0CCcHDI9DIP_sb94Z3RtRV4By0MnonjChZOsuuudV1o9cW1xBQLJJo2I4u6l2AXqoxNSOpq6z1h9GsOwYpmbhrAT2F0aIA_JX8I0T9kCGBiEUWg9aTk7VoIBBoeZ6RZ1K-LMI1K8PGOXskh-njCNB_hGOg8HxnLH2ChhdD9L5A201LjMWsLBS4R_760vtixQqHmvMKvlh5AZrrPXSX"/>
+        </div>
+        <div class="gw-products-banner-content">
+          <span class="gw-products-banner-subtitle">Multi-Format Convenience</span>
+          <h3 class="gw-products-banner-title">Standardized Specifications for Retail &amp; Enterprise</h3>
+          <p class="gw-products-banner-desc">
+            Manufactured with premium virgin PET and food-grade polycarbonate dispensers, our range ensures zero chemical leaching and unaltered natural spring freshness.
+          </p>
+          <div class="gw-products-features">
+            <div class="gw-feature-box">
+              <span class="gw-feature-box-title">BPA-Free PET</span>
+              <span class="gw-feature-box-desc">100% Recyclable standard</span>
+            </div>
+            <div class="gw-feature-box">
+              <span class="gw-feature-box-title">Tamper-Proof</span>
+              <span class="gw-feature-box-desc">Hermetic security seal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 6 Product Cards Grid -->
+    <div class="gw-products-grid">
+      <!-- Card 1: 500ml -->
+      <div class="gw-product-card">
+        <div>
+          <div class="gw-product-card-header">
+            <span class="gw-product-size-pill">500 ml</span>
+            <span class="gw-product-meta">Case of 24 Units</span>
+          </div>
+          <h3 class="gw-product-title">500ml Everyday Bottle</h3>
+          <p class="gw-product-desc">
+            Compact, on-the-go pure water ideal for conferences, passenger hydration, sporting events, and corporate boardroom hospitality.
+          </p>
+        </div>
+        <div class="gw-product-footer">
+          <span class="gw-product-status">In-Stock Supply</span>
+          <button class="gw-product-action" onclick="switchTab('Contact Us')">
+            Inquire <span class="material-symbols-outlined gw-icon text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+      <!-- Card 2: 1000ml -->
+      <div class="gw-product-card">
+        <div>
+          <div class="gw-product-card-header">
+            <span class="gw-product-size-pill">1000 ml</span>
+            <span class="gw-product-meta">Case of 12 Units</span>
+          </div>
+          <h3 class="gw-product-title">1000ml Standard Bottle</h3>
+          <p class="gw-product-desc">
+            The balanced desktop hydration size for active executives, student desks, fitness routines, and prolonged work sessions.
+          </p>
+        </div>
+        <div class="gw-product-footer">
+          <span class="gw-product-status">In-Stock Supply</span>
+          <button class="gw-product-action" onclick="switchTab('Contact Us')">
+            Inquire <span class="material-symbols-outlined gw-icon text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+      <!-- Card 3: 1500ml -->
+      <div class="gw-product-card">
+        <div>
+          <div class="gw-product-card-header">
+            <span class="gw-product-size-pill">1500 ml</span>
+            <span class="gw-product-meta">Case of 12 Units</span>
+          </div>
+          <h3 class="gw-product-title">1500ml Daily Reserve</h3>
+          <p class="gw-product-desc">
+            Generous daily volume for long commutes, plantation staff, outdoor construction shifts, and family hydration requirements.
+          </p>
+        </div>
+        <div class="gw-product-footer">
+          <span class="gw-product-status">In-Stock Supply</span>
+          <button class="gw-product-action" onclick="switchTab('Contact Us')">
+            Inquire <span class="material-symbols-outlined gw-icon text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+      <!-- Card 4: 5000ml -->
+      <div class="gw-product-card">
+        <div>
+          <div class="gw-product-card-header">
+            <span class="gw-product-size-pill">5000 ml</span>
+            <span class="gw-product-meta">Heavy-Duty Handle</span>
+          </div>
+          <h3 class="gw-product-title">5L Household &amp; Gathering Can</h3>
+          <p class="gw-product-desc">
+            Reinforced grip bottle engineered for domestic cooking, tea pantries, catering crews, and clinic patient rooms.
+          </p>
+        </div>
+        <div class="gw-product-footer">
+          <span class="gw-product-status">In-Stock Supply</span>
+          <button class="gw-product-action" onclick="switchTab('Contact Us')">
+            Inquire <span class="material-symbols-outlined gw-icon text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+      <!-- Card 5: 19L Dispenser Jar -->
+      <div class="gw-product-card gw-product-card-highlighted">
+        <span class="gw-product-badge">Most Popular B2B</span>
+        <div>
+          <div class="gw-product-card-header">
+            <span class="gw-product-size-pill">19 Liter</span>
+            <span class="gw-product-meta">Refillable Polycarbonate</span>
+          </div>
+          <h3 class="gw-product-title">19L Bulk Dispenser Bottle</h3>
+          <p class="gw-product-desc">
+            Commercial enterprise benchmark. Engineered for continuous gravity or pump coolers in corporate complexes and medical centers.
+          </p>
+        </div>
+        <div class="gw-product-footer">
+          <span class="gw-product-status">Fleet Delivery Available</span>
+          <button class="gw-product-action" onclick="switchTab('Corporate')">
+            Corporate Order <span class="material-symbols-outlined gw-icon text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+      <!-- Card 6: Hot & Cold Dispenser -->
+      <div class="gw-product-card">
+        <div>
+          <div class="gw-product-card-header">
+            <span class="gw-product-size-pill alt">Hardware Unit</span>
+            <span class="gw-product-meta">Dual Temperature</span>
+          </div>
+          <h3 class="gw-product-title">Water Dispenser Machine</h3>
+          <p class="gw-product-desc">
+            Commercial compressor-chilled hot &amp; cold freestanding dispenser units available on monthly lease or outright corporate purchase.
+          </p>
+        </div>
+        <div class="gw-product-footer">
+          <span class="gw-product-status">Lease / Purchase</span>
+          <button class="gw-product-action" onclick="switchTab('Corporate')">
+            View Plans <span class="material-symbols-outlined gw-icon text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Featured 19L Solution Section -->
+<section class="gw-enterprise-section">
+  <div class="gw-container">
+    <div class="gw-enterprise-card">
+      <div class="gw-enterprise-grid">
+        <div class="gw-enterprise-content">
+          <div class="gw-enterprise-pill">Commercial Enterprise Solution</div>
+          <h2 class="gw-enterprise-title">Reliable Water for Everyday Spaces</h2>
+          <p class="gw-enterprise-desc">
+            Our 19L sanitized container delivery cycle is the gold standard for high-traffic environments. We combine automated sanitization, leak-proof non-spill valving, and regular scheduled route replacements straight from Kuledrawatta, Nawalapitiya.
+          </p>
+          <div class="gw-enterprise-features">
+            <div class="gw-enterprise-feature-item">
+              <span class="material-symbols-outlined gw-enterprise-feature-icon">autorenew</span>
+              <div>
+                <h4 class="gw-enterprise-feature-title">Scheduled Route Refills</h4>
+                <p class="gw-enterprise-feature-desc">Guaranteed weekly or bi-weekly replenishment.</p>
+              </div>
+            </div>
+            <div class="gw-enterprise-feature-item">
+              <span class="material-symbols-outlined gw-enterprise-feature-icon">sanitizer</span>
+              <div>
+                <h4 class="gw-enterprise-feature-title">Multi-Wash Sterilization</h4>
+                <p class="gw-enterprise-feature-desc">Every return jar undergoes high-pressure thermal washing.</p>
+              </div>
+            </div>
+          </div>
+          <div class="gw-enterprise-actions">
+            <button class="gw-btn-accent" onclick="switchTab('Corporate')">Make an Inquiry</button>
+            <a class="gw-btn-outline-light" href="tel:0542222533">
+              <span class="material-symbols-outlined gw-icon">call</span>
+              Direct Dispatch: 054 2222533
+            </a>
+          </div>
+        </div>
+        <div class="gw-enterprise-matrix">
+          <h3 class="gw-matrix-title">Enterprise Supply Matrix</h3>
+          <div class="gw-matrix-list">
+            <div class="gw-matrix-item">
+              <span class="gw-matrix-item-label">Minimum Office Order</span>
+              <span class="gw-matrix-item-value">5 Units / Month</span>
+            </div>
+            <div class="gw-matrix-item">
+              <span class="gw-matrix-item-label">Dispenser Rental Option</span>
+              <span class="gw-matrix-item-value">Free on 20+ Jars/mo</span>
+            </div>
+            <div class="gw-matrix-item">
+              <span class="gw-matrix-item-label">Bottling Facility</span>
+              <span class="gw-matrix-item-value">Kuledrawatta, Nawalapitiya</span>
+            </div>
+            <div class="gw-matrix-item">
+              <span class="gw-matrix-item-label">Regulatory Registration</span>
+              <span class="gw-matrix-item-value">MOH Sri Lanka</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Why Galaboda (4 Clean Cards) -->
+<section class="gw-features-section">
+  <div class="gw-container">
+    <div class="gw-section-header-center">
+      <span class="gw-section-subtitle">Uncompromising Standards</span>
+      <h2 class="gw-section-title">Why Galaboda Water?</h2>
+      <p class="gw-section-desc" style="margin: 0.75rem auto 0 auto;">
+        Pure hydration is not simply bottled water; it is a clinical process of environmental selection, multi-barrier filtration, and dependable logistics.
+      </p>
+    </div>
+    <div class="gw-features-grid">
+      <div class="gw-feature-card">
+        <div class="gw-feature-icon-box">
+          <span class="material-symbols-outlined">water_drop</span>
+        </div>
+        <h3 class="gw-feature-title">Purity &amp; Safety</h3>
+        <p class="gw-feature-desc">
+          Treated using micro-filtration, carbon purification, reverse osmosis, and ozonation to eradicate 99.9% of biological impurities.
+        </p>
+      </div>
+      <div class="gw-feature-card">
+        <div class="gw-feature-icon-box">
+          <span class="material-symbols-outlined">science</span>
+        </div>
+        <h3 class="gw-feature-title">Consistent Quality</h3>
+        <p class="gw-feature-desc">
+          Every batch undergoes strict in-house laboratory testing verifying total dissolved solids (TDS), neutral pH balance, and microbiological counts.
+        </p>
+      </div>
+      <div class="gw-feature-card">
+        <div class="gw-feature-icon-box">
+          <span class="material-symbols-outlined">verified</span>
+        </div>
+        <h3 class="gw-feature-title">20+ Years Heritage</h3>
+        <p class="gw-feature-desc">
+          Established in May 2004, offering two decades of continuous manufacturing integrity under Sri Lankan health authority guidelines.
+        </p>
+      </div>
+      <div class="gw-feature-card">
+        <div class="gw-feature-icon-box">
+          <span class="material-symbols-outlined">local_shipping</span>
+        </div>
+        <h3 class="gw-feature-title">Reliable Supply</h3>
+        <p class="gw-feature-desc">
+          Dedicated commercial delivery fleets guaranteeing that corporate offices, schools, and health facilities never encounter replenishment delays.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Company Heritage & Story -->
+<section class="gw-heritage-section">
+  <div class="gw-container">
+    <div class="gw-heritage-grid">
+      <div class="gw-heritage-content">
+        <div class="gw-heritage-pill">
+          <span class="gw-heritage-pill-main">Est. May 2004</span>
+          <span class="gw-hero-pill-sep">Ã¢â‚¬Â¢</span>
+          <span class="gw-hero-pill-text-sub">Central Province, Sri Lanka</span>
+        </div>
+        <h2 class="gw-heritage-title">More Than 20 Years of Trusted Hydration</h2>
+        <p class="gw-heritage-desc-lg">
+          Founded in May 2004 at Kuledrawatta, Bawwagama in picturesque Nawalapitiya, Galaboda Water began with a straightforward objective: to provide clean, healthy, and accessible drinking water to Sri Lankan families and institutions.
+        </p>
+        <p class="gw-heritage-desc-md">
+          Surrounded by the natural watersheds and rain-drenched hill country of Nawalapitiya, our manufacturing facility operates under registration with the Ministry of Health, Sri Lanka. Over the past two decades, we have evolved from a regional bottler into a recognized national supplier, while preserving our boutique focus on water purity and ethical customer relationships.
+        </p>
+        <div style="padding-top: 0.5rem;">
+          <button class="gw-btn-secondary" onclick="switchTab('About Us')">
+            <span>Read Full Company Journey</span>
+            <span class="material-symbols-outlined gw-icon" style="font-size: 0.875rem;">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+      <div>
+        <div class="gw-institutional-card">
+          <h3 class="gw-institutional-title">Institutional Details</h3>
+          <div class="gw-institutional-list">
+            <div class="gw-institutional-item">
+              <span class="material-symbols-outlined gw-institutional-icon">apartment</span>
+              <div>
+                <h4 class="gw-institutional-item-title">Registered Bottling Plant</h4>
+                <p class="gw-institutional-item-desc">No. 1176, Kuledrawatta, Bawwagama, Nawalapitiya, Sri Lanka</p>
+              </div>
+            </div>
+            <div class="gw-institutional-item">
+              <span class="material-symbols-outlined gw-institutional-icon">health_and_safety</span>
+              <div>
+                <h4 class="gw-institutional-item-title">Regulatory Oversight</h4>
+                <p class="gw-institutional-item-desc">Approved &amp; Certified under the Ministry of Health, Sri Lanka</p>
+              </div>
+            </div>
+            <div class="gw-institutional-item">
+              <span class="material-symbols-outlined gw-institutional-icon">event_available</span>
+              <div>
+                <h4 class="gw-institutional-item-title">Continuous Operation</h4>
+                <p class="gw-institutional-item-desc">Established May 2004 Ã¢â‚¬â€ Over 20 consecutive operational years</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Trusted Across Industries (B2B Grid) -->
+<section class="gw-industries-section">
+  <div class="gw-container">
+    <div class="gw-section-header-center">
+      <span class="gw-section-subtitle">Enterprise Partnerships</span>
+      <h2 class="gw-section-title">Trusted Across Industries</h2>
+      <p class="gw-section-desc" style="margin: 0.75rem auto 0 auto;">
+        Delivering safe water solutions for daily operational demands in Sri Lanka's critical commercial sectors.
+      </p>
+    </div>
+    <div class="gw-industries-grid">
+      <div class="gw-industry-card">
+        <span class="material-symbols-outlined gw-industry-icon">domain</span>
+        <h3 class="gw-industry-title">Corporate Offices</h3>
+        <p class="gw-industry-desc">Daily desk &amp; pantry supply</p>
+      </div>
+      <div class="gw-industry-card">
+        <span class="material-symbols-outlined gw-industry-icon">account_balance</span>
+        <h3 class="gw-industry-title">Banks &amp; Finance</h3>
+        <p class="gw-industry-desc">Branch customer hydration</p>
+      </div>
+      <div class="gw-industry-card">
+        <span class="material-symbols-outlined gw-industry-icon">hotel</span>
+        <h3 class="gw-industry-title">Hotels &amp; Hospitality</h3>
+        <p class="gw-industry-desc">Guest room &amp; banqueting bottles</p>
+      </div>
+      <div class="gw-industry-card">
+        <span class="material-symbols-outlined gw-industry-icon">school</span>
+        <h3 class="gw-industry-title">Schools &amp; Institutes</h3>
+        <p class="gw-industry-desc">Hygienic campus water coolers</p>
+      </div>
+      <div class="gw-industry-card">
+        <span class="material-symbols-outlined gw-industry-icon">local_hospital</span>
+        <h3 class="gw-industry-title">Hospitals &amp; Healthcare</h3>
+        <p class="gw-industry-desc">Laboratory-tested sterility</p>
+      </div>
+      <div class="gw-industry-card">
+        <span class="material-symbols-outlined gw-industry-icon">factory</span>
+        <h3 class="gw-industry-title">Manufacturing</h3>
+        <p class="gw-industry-desc">Large workforce bulk water</p>
+      </div>
+      <div class="gw-industry-card">
+        <span class="material-symbols-outlined gw-industry-icon">agriculture</span>
+        <h3 class="gw-industry-title">Plantation Companies</h3>
+        <p class="gw-industry-desc">Upcountry estate supply</p>
+      </div>
+      <div class="gw-industry-card">
+        <span class="material-symbols-outlined gw-industry-icon">celebration</span>
+        <h3 class="gw-industry-title">Events &amp; Functions</h3>
+        <p class="gw-industry-desc">Custom event consignments</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Quality & Certifications Section -->
+<section class="gw-quality-section">
+  <div class="gw-container">
+    <div class="gw-section-header-center">
+      <span class="gw-section-subtitle">Verification &amp; Hygiene</span>
+      <h2 class="gw-section-title">Quality Is Our Standard</h2>
+      <p class="gw-section-desc" style="margin: 0.75rem auto 0 auto;">
+        Every drop is scrutinized under rigorous biological, physical, and chemical parameters.
+      </p>
+    </div>
+    <div class="gw-quality-grid">
+      <div class="gw-quality-card">
+        <div class="gw-quality-icon-box">
+          <span class="material-symbols-outlined">verified_user</span>
+        </div>
+        <h3 class="gw-quality-card-title">Ministry of Health Compliance</h3>
+        <p class="gw-quality-card-desc">
+          Certified manufacturing site complying with national food safety and drinking water regulations in Sri Lanka.
+        </p>
+        <div class="gw-quality-cert-tag">Official certificate to be displayed</div>
+      </div>
+      <div class="gw-quality-card">
+        <div class="gw-quality-icon-box">
+          <span class="material-symbols-outlined">science</span>
+        </div>
+        <h3 class="gw-quality-card-title">Batch Mineral Analysis</h3>
+        <p class="gw-quality-card-desc">
+          Continuous calibration of total dissolved solids, essential minerals, alkalinity, and physical clarity before dispatch.
+        </p>
+        <div class="gw-quality-cert-tag">Official certificate to be displayed</div>
+      </div>
+      <div class="gw-quality-card">
+        <div class="gw-quality-icon-box">
+          <span class="material-symbols-outlined">clean_hands</span>
+        </div>
+        <h3 class="gw-quality-card-title">Aseptic Clean-Room Bottling</h3>
+        <p class="gw-quality-card-desc">
+          Fully enclosed positive-pressure bottling zone eliminating human contact during the filling and hermetic capping steps.
+        </p>
+        <div class="gw-quality-cert-tag">Official certificate to be displayed</div>
+      </div>
+    </div>
+    <div class="gw-quality-cta">
+      <button class="gw-btn-primary" onclick="switchTab('About Us')">
+        <span>View Certifications &amp; Water Analysis</span>
+        <span class="material-symbols-outlined gw-icon" style="font-size: 0.875rem;">open_in_new</span>
+      </button>
+    </div>
+  </div>
+</section>
+<!-- Sustainability Section -->
+<section class="gw-sustainability-section">
+  <div class="gw-container">
+    <div class="gw-sustainability-card">
+      <div class="gw-sustainability-inner">
+        <div class="gw-sustainability-content">
+          <div class="gw-section-pill">Ecological Stewardship</div>
+          <h2 class="gw-section-title">Protecting the Source. Respecting the Future.</h2>
+          <p class="gw-section-desc" style="margin: 0;">
+            Water is a precious ecological asset. Operating in Nawalapitiya means we share our watershed with rich central highlands biodiversity. We practice responsible aquifer abstraction, maintain zero wastewater discharge in bottling, and implement bottle reclamation programs for our 19L polycarbonate line.
+          </p>
+        </div>
+        <div class="gw-sustainability-actions">
+          <button class="gw-btn-accent" onclick="switchTab('About Us')">Our Commitment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Corporate CTA Banner -->
+<section class="gw-cta-section">
+  <div class="gw-container">
+    <div class="gw-cta-inner">
+      <h2 class="gw-cta-title">Looking for a Reliable Water Partner?</h2>
+      <p class="gw-cta-desc">
+        Join leading corporate institutions across Sri Lanka who count on Galaboda Water for uninterrupted purity.
+      </p>
+      <div class="gw-cta-actions">
+        <button class="gw-btn-cta-primary" onclick="switchTab('Corporate')">Make a Corporate Inquiry</button>
+        <button class="gw-btn-cta-secondary" onclick="switchTab('Contact Us')">Speak to Sales Rep</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<!-- ==================== TAB 2: PRODUCTS PAGE ==================== -->
+<main class="tab-content" id="tab-Products">
+  <section class="gw-page-header">
+    <div class="gw-container">
+      <div class="gw-page-header-inner">
+        <span class="gw-page-header-subtitle">Product Catalog</span>
+        <h1 class="gw-page-header-title">Pristine Drinking Water in Every Size</h1>
+        <p class="gw-page-header-desc">
+          Explore our complete portfolio of bottled natural drinking water. Bottled in Nawalapitiya with medical-grade hygiene protocols for individual consumers, active lifestyles, and large institutions.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Products Detail Catalog -->
+  <section class="gw-catalog-section">
+    <div class="gw-container">
+      <div class="gw-catalog-list">
+        <!-- Product 1: 500ml -->
+        <div class="gw-catalog-item">
+          <div class="gw-catalog-icon-panel">
+            <span class="material-symbols-outlined gw-catalog-icon">water_bottle</span>
+            <p class="gw-catalog-size-label">500 ml</p>
+            <p class="gw-catalog-size-desc">Convenient Single Serve</p>
+          </div>
+          <div class="gw-catalog-content">
+            <div class="gw-catalog-tags">
+              <span class="gw-catalog-tag">Everyday On-The-Go</span>
+              <span class="gw-catalog-tag-secondary">PET 24-Pack</span>
+            </div>
+            <h3 class="gw-catalog-title">Galaboda 500ml Bottled Water</h3>
+            <p class="gw-catalog-desc">
+              Engineered for personal portability. Fits neatly in car cup holders, backpacks, flight trolleys, and conference delegate folders. Hermetically sealed with tamper-proof cap rings.
+            </p>
+            <div class="gw-catalog-specs">
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Package Format</span>
+                <span class="gw-catalog-spec-value">24 Bottles / Carton</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Best Suited For</span>
+                <span class="gw-catalog-spec-value">Conferences, Travel</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Shelf Life</span>
+                <span class="gw-catalog-spec-value">12 Months (Sealed)</span>
+              </div>
+            </div>
+            <div class="gw-catalog-action">
+              <button class="gw-btn-primary" onclick="switchTab('Contact Us')">Order 500ml Cases</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2: 1000ml -->
+        <div class="gw-catalog-item">
+          <div class="gw-catalog-icon-panel">
+            <span class="material-symbols-outlined gw-catalog-icon">water_bottle</span>
+            <p class="gw-catalog-size-label">1000 ml</p>
+            <p class="gw-catalog-size-desc">1 Liter Standard</p>
+          </div>
+          <div class="gw-catalog-content">
+            <div class="gw-catalog-tags">
+              <span class="gw-catalog-tag">Work &amp; Travel</span>
+              <span class="gw-catalog-tag-secondary">PET 12-Pack</span>
+            </div>
+            <h3 class="gw-catalog-title">Galaboda 1000ml (1L) Bottled Water</h3>
+            <p class="gw-catalog-desc">
+              The balanced desktop companion for workplace stations, gymnasium sessions, and general retail shelf distribution. Balances high volume with an ergonomic grip geometry.
+            </p>
+            <div class="gw-catalog-specs">
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Package Format</span>
+                <span class="gw-catalog-spec-value">12 Bottles / Carton</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Best Suited For</span>
+                <span class="gw-catalog-spec-value">Desks, Active Sports</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Shelf Life</span>
+                <span class="gw-catalog-spec-value">12 Months (Sealed)</span>
+              </div>
+            </div>
+            <div class="gw-catalog-action">
+              <button class="gw-btn-primary" onclick="switchTab('Contact Us')">Order 1000ml Cases</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3: 1500ml -->
+        <div class="gw-catalog-item">
+          <div class="gw-catalog-icon-panel">
+            <span class="material-symbols-outlined gw-catalog-icon">water_bottle</span>
+            <p class="gw-catalog-size-label">1500 ml</p>
+            <p class="gw-catalog-size-desc">1.5 Liter Full Day</p>
+          </div>
+          <div class="gw-catalog-content">
+            <div class="gw-catalog-tags">
+              <span class="gw-catalog-tag">Extended Day Hydration</span>
+              <span class="gw-catalog-tag-secondary">PET 12-Pack</span>
+            </div>
+            <h3 class="gw-catalog-title">Galaboda 1500ml Bottled Water</h3>
+            <p class="gw-catalog-desc">
+              Provides adequate daily liquid requirements in a single container. Widely utilized by outdoor project managers, bus and tour operators, and residential family storage.
+            </p>
+            <div class="gw-catalog-specs">
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Package Format</span>
+                <span class="gw-catalog-spec-value">12 Bottles / Carton</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Best Suited For</span>
+                <span class="gw-catalog-spec-value">Field Teams, Families</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Shelf Life</span>
+                <span class="gw-catalog-spec-value">12 Months (Sealed)</span>
+              </div>
+            </div>
+            <div class="gw-catalog-action">
+              <button class="gw-btn-primary" onclick="switchTab('Contact Us')">Order 1500ml Cases</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 4: 5000ml -->
+        <div class="gw-catalog-item">
+          <div class="gw-catalog-icon-panel">
+            <span class="material-symbols-outlined gw-catalog-icon">takeout_dining</span>
+            <p class="gw-catalog-size-label">5000 ml</p>
+            <p class="gw-catalog-size-desc">5L Carry Can</p>
+          </div>
+          <div class="gw-catalog-content">
+            <div class="gw-catalog-tags">
+              <span class="gw-catalog-tag">Household &amp; Gatherings</span>
+              <span class="gw-catalog-tag-secondary">Ergonomic Handle</span>
+            </div>
+            <h3 class="gw-catalog-title">Galaboda 5000ml (5L) Can</h3>
+            <p class="gw-catalog-desc">
+              Features an integrated heavy-duty carrying handle and broad pour spout. Ideal for culinary usage, domestic cooking, laboratory mixing, and weekend holiday villas.
+            </p>
+            <div class="gw-catalog-specs">
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Package Format</span>
+                <span class="gw-catalog-spec-value">2 or 4 Units / Bundle</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Best Suited For</span>
+                <span class="gw-catalog-spec-value">Kitchens, Clinics</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Shelf Life</span>
+                <span class="gw-catalog-spec-value">12 Months (Sealed)</span>
+              </div>
+            </div>
+            <div class="gw-catalog-action">
+              <button class="gw-btn-primary" onclick="switchTab('Contact Us')">Order 5L Cans</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 5: 19L Dispenser Jar -->
+        <div class="gw-catalog-item gw-catalog-item-featured">
+          <div class="gw-catalog-icon-panel featured">
+            <span class="material-symbols-outlined gw-catalog-icon">water_damage</span>
+            <p class="gw-catalog-size-label">19 Liter</p>
+            <p class="gw-catalog-size-desc featured">Reusable Enterprise Jar</p>
+          </div>
+          <div class="gw-catalog-content">
+            <div class="gw-catalog-tags">
+              <span class="gw-catalog-tag featured">High Volume Dispensers</span>
+              <span class="gw-catalog-tag-secondary featured">Flagship Commercial Line</span>
+            </div>
+            <h3 class="gw-catalog-title">Galaboda 19L Dispenser Bottle</h3>
+            <p class="gw-catalog-desc">
+              Manufactured with rigid, impact-resistant polycarbonate. Precision neck matches international commercial dispensers. Subject to multi-point thermal sanitization before every vacuum-sealed refill.
+            </p>
+            <div class="gw-catalog-specs">
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Distribution</span>
+                <span class="gw-catalog-spec-value">Scheduled Fleet Delivery</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Best Suited For</span>
+                <span class="gw-catalog-spec-value">Offices, Hospitals, Banks</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Container Type</span>
+                <span class="gw-catalog-spec-value">Food-Grade Returnable PC</span>
+              </div>
+            </div>
+            <div class="gw-catalog-action">
+              <button class="gw-btn-accent" onclick="switchTab('Corporate')">Setup Corporate 19L Contract</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 6: Water Dispenser Stand -->
+        <div class="gw-catalog-item">
+          <div class="gw-catalog-icon-panel">
+            <span class="material-symbols-outlined gw-catalog-icon">countertops</span>
+            <p class="gw-catalog-size-label">Dispenser</p>
+            <p class="gw-catalog-size-desc">Hot &amp; Cold Freestanding</p>
+          </div>
+          <div class="gw-catalog-content">
+            <div class="gw-catalog-tags">
+              <span class="gw-catalog-tag alt">Hardware Unit</span>
+              <span class="gw-catalog-tag-secondary">Energy-Efficient Compressor</span>
+            </div>
+            <h3 class="gw-catalog-title">Commercial Water Dispenser Machine</h3>
+            <p class="gw-catalog-desc">
+              Heavy-duty stainless steel reservoirs providing instant piping hot water (up to 95Ã‚Â°C) and refreshingly chilled water (below 10Ã‚Â°C). Child-lock safety valves on hot taps included.
+            </p>
+            <div class="gw-catalog-specs">
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Cooling Tech</span>
+                <span class="gw-catalog-spec-value">Compressor Refrigerated</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Maintenance</span>
+                <span class="gw-catalog-spec-value">Quarterly Descaling Included</span>
+              </div>
+              <div class="gw-catalog-spec">
+                <span class="gw-catalog-spec-label">Arrangement</span>
+                <span class="gw-catalog-spec-value">Monthly Rental / Outright</span>
+              </div>
+            </div>
+            <div class="gw-catalog-action">
+              <button class="gw-btn-primary" onclick="switchTab('Corporate')">Inquire Dispenser Lease</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Need Regular Supply CTA Box -->
+      <div class="gw-catalog-cta">
+        <div>
+          <h4 class="gw-catalog-cta-title">Need a Regular Scheduled Supply?</h4>
+          <p class="gw-catalog-cta-desc">
+            Set up automated weekly or monthly delivery schedules for your commercial facility or private property.
+          </p>
+        </div>
+        <button class="gw-btn-primary" style="white-space: nowrap;" onclick="switchTab('Contact Us')">Schedule Route Assessment</button>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- ==================== TAB 3: ABOUT US PAGE ==================== -->
+<main class="tab-content" id="tab-About Us">
+  <section class="gw-page-header">
+    <div class="gw-container">
+      <div class="gw-page-header-inner">
+        <span class="gw-page-header-subtitle">Company Profile</span>
+        <h1 class="gw-page-header-title">Pioneering Safe Hydration Since May 2004</h1>
+        <p class="gw-page-header-desc">
+          Founded over 20 years ago in Nawalapitiya, Galaboda Water represents continuous dedication to certified hygiene, mineral purity, and ethical environmental stewardship in Sri Lanka.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Heritage Timeline -->
+  <section class="gw-timeline-section">
+    <div class="gw-container">
+      <div class="gw-section-header-center">
+        <span class="gw-section-subtitle">Historical Milestone</span>
+        <h2 class="gw-section-title">Our Heritage Timeline</h2>
+        <p class="gw-section-desc" style="margin: 0.5rem auto 0 auto;">From regional bottling roots to national enterprise reliability.</p>
+      </div>
+      <div class="gw-timeline-grid">
+        <div class="gw-timeline-card">
+          <div>
+            <div class="gw-timeline-year-pill">May 2004</div>
+            <h3 class="gw-timeline-card-title">Founding &amp; MOH Registration</h3>
+            <p class="gw-timeline-card-desc">
+              Galaboda Water was officially established at No. 1176, Kuledrawatta, Bawwagama in Nawalapitiya. With official licensing from the Ministry of Health, Sri Lanka, the first multi-stage purification line was installed to harness the pristine waters of the central highlands.
+            </p>
+          </div>
+          <div class="gw-timeline-card-footer">
+            <span class="material-symbols-outlined gw-icon">flag</span>
+            <span>Inception in Kuledrawatta, Nawalapitiya</span>
+          </div>
+        </div>
+        <div class="gw-timeline-card gw-timeline-card-featured">
+          <div>
+            <div class="gw-timeline-year-pill featured">Today (20+ Years Later)</div>
+            <h3 class="gw-timeline-card-title">Enterprise National Provider</h3>
+            <p class="gw-timeline-card-desc">
+              Celebrating more than two decades of unblemished service. Today, Galaboda Water operates an extensive fleet distribution network delivering 500ml, 1L, 1.5L, 5L, and 19L dispenser bottles to hundreds of banks, government entities, hospitality resorts, and private residences nationwide.
+            </p>
+          </div>
+          <div class="gw-timeline-card-footer bold">
+            <span class="material-symbols-outlined gw-icon">verified</span>
+            <span>20+ Years of Public &amp; Corporate Trust</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Mission & Vision -->
+  <section class="gw-mission-section">
+    <div class="gw-container">
+      <div class="gw-mission-grid">
+        <div class="gw-mission-card">
+          <div class="gw-feature-icon-box" style="margin-bottom: 1.5rem;">
+            <span class="material-symbols-outlined">visibility</span>
+          </div>
+          <h3 class="gw-mission-title">Our Vision</h3>
+          <p class="gw-mission-desc">
+            To be recognized as the most dependable and quality-conscious drinking water brand in Sri Lanka, safeguarding public health and preserving natural water tables through clinical manufacturing discipline.
+          </p>
+        </div>
+        <div class="gw-mission-card">
+          <div class="gw-feature-icon-box" style="margin-bottom: 1.5rem;">
+            <span class="material-symbols-outlined">track_changes</span>
+          </div>
+          <h3 class="gw-mission-title">Our Mission</h3>
+          <p class="gw-mission-desc">
+            To deliver crystal-clear, safe bottled drinking water by utilizing stringent scientific filtration, maintaining flawless regulatory compliance with health authorities, and providing reliable customer care across institutional and retail channels.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 5-Stage Purification Cycle -->
+  <section class="gw-process-section">
+    <div class="gw-container">
+      <div class="gw-section-header-center">
+        <span class="gw-section-subtitle">Manufacturing Science</span>
+        <h2 class="gw-section-title">Our 5-Stage Purification Cycle</h2>
+        <p class="gw-section-desc" style="margin: 0.5rem auto 0 auto;">
+          Engineered to preserve natural mineral taste while eliminating 100% of contaminants.
+        </p>
+      </div>
+      <div class="gw-process-grid">
+        <div class="gw-process-step">
+          <div class="gw-process-number">1</div>
+          <h3 class="gw-process-title">Water Source</h3>
+          <p class="gw-process-desc">Protected natural aquifer catchment in Nawalapitiya hills.</p>
+        </div>
+        <div class="gw-process-step">
+          <div class="gw-process-number">2</div>
+          <h3 class="gw-process-title">Purification</h3>
+          <p class="gw-process-desc">Sand filtration, activated carbon adsorption &amp; micro-filtering.</p>
+        </div>
+        <div class="gw-process-step">
+          <div class="gw-process-number">3</div>
+          <h3 class="gw-process-title">Quality Control</h3>
+          <p class="gw-process-desc">In-line TDS calibration, UV radiation &amp; ozone sterilization.</p>
+        </div>
+        <div class="gw-process-step">
+          <div class="gw-process-number">4</div>
+          <h3 class="gw-process-title">Aseptic Bottling</h3>
+          <p class="gw-process-desc">Automated filling &amp; sealing inside sterile positive-pressure room.</p>
+        </div>
+        <div class="gw-process-step">
+          <div class="gw-process-number">5</div>
+          <h3 class="gw-process-title">Distribution</h3>
+          <p class="gw-process-desc">Fleet loading and route delivery straight to our clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- ==================== TAB 4: CORPORATE PAGE ==================== -->
+<main class="tab-content" id="tab-Corporate">
+  <section class="gw-page-header">
+    <div class="gw-container">
+      <div class="gw-page-header-inner">
+        <span class="gw-page-header-subtitle">B2B Institutional Supply</span>
+        <h1 class="gw-page-header-title">Workplace &amp; Hospitality Bulk Hydration</h1>
+        <p class="gw-page-header-desc">
+          Custom supply agreements, dispenser leasing schemes, and dedicated logistical routing for corporate offices, healthcare facilities, banks, and hotel chains across Sri Lanka.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="gw-corporate-section">
+    <div class="gw-container">
+      <div class="gw-corporate-grid">
+        <!-- Corporate Perks -->
+        <div class="gw-corporate-perks">
+          <div class="gw-corporate-perks-header">
+            <span class="gw-section-subtitle">The Galaboda Advantage</span>
+            <h2 class="gw-section-title" style="font-size: 2rem; line-height: 2.5rem;">Why Corporate Procurement Teams Choose Us</h2>
+          </div>
+          <div class="gw-perk-cards">
+            <div class="gw-perk-card">
+              <div class="gw-perk-card-header">
+                <span class="material-symbols-outlined gw-perk-icon">event_repeat</span>
+                <h3 class="gw-perk-title">Scheduled Fleet Replenishment</h3>
+              </div>
+              <p class="gw-perk-desc">We assign fixed route days to ensure your team never runs dry during crucial business days.</p>
+            </div>
+            <div class="gw-perk-card">
+              <div class="gw-perk-card-header">
+                <span class="material-symbols-outlined gw-perk-icon">receipt_long</span>
+                <h3 class="gw-perk-title">Consolidated Monthly Billing</h3>
+              </div>
+              <p class="gw-perk-desc">Official VAT invoices, purchase order alignment, and corporate 30-day credit facilities for accredited enterprises.</p>
+            </div>
+            <div class="gw-perk-card">
+              <div class="gw-perk-card-header">
+                <span class="material-symbols-outlined gw-perk-icon">sanitizer</span>
+                <h3 class="gw-perk-title">Free Sanitization Routine</h3>
+              </div>
+              <p class="gw-perk-desc">Quarterly on-site chemical descaling and sanitization of water dispensers included in all enterprise supply contracts.</p>
+            </div>
+          </div>
+          <div class="gw-emergency-card">
+            <h3 class="gw-emergency-title">Emergency Bulk Request?</h3>
+            <p class="gw-emergency-desc">Urgent event consignments or emergency water tanker backup available for industrial complexes.</p>
+            <a class="gw-emergency-link" href="tel:0773655277">
+              <span class="material-symbols-outlined gw-icon">call</span>
+              <span>Direct Hotline: 077 3655277</span>
+            </a>
+          </div>
+        </div>
+        <!-- Corporate Inquiry Form -->
+        <div class="gw-corporate-form-panel">
+          <h2 class="gw-form-title">Corporate Supply Inquiry</h2>
+          <p class="gw-form-subtitle">Fill out the requirements below for a customized procurement quote within 24 hours.</p>
+          <form class="gw-form" id="corporateForm" onsubmit="handleCorporateSubmit(event)">
+            <div class="gw-form-row">
+              <div class="gw-form-group">
+                <label class="gw-form-label">Company Name *</label>
+                <input class="gw-form-input" placeholder="e.g. Ceylon Commercial Bank PLC" required type="text"/>
+              </div>
+              <div class="gw-form-group">
+                <label class="gw-form-label">Contact Person *</label>
+                <input class="gw-form-input" placeholder="e.g. Sunil Perera (Procurement Mgr)" required type="text"/>
+              </div>
+            </div>
+            <div class="gw-form-row">
+              <div class="gw-form-group">
+                <label class="gw-form-label">Phone Number *</label>
+                <input class="gw-form-input" placeholder="e.g. 077 123 4567" required type="tel"/>
+              </div>
+              <div class="gw-form-group">
+                <label class="gw-form-label">Official Email *</label>
+                <input class="gw-form-input" placeholder="e.g. procurement@company.lk" required type="email"/>
+              </div>
+            </div>
+            <div class="gw-form-row">
+              <div class="gw-form-group">
+                <label class="gw-form-label">Industry Sector</label>
+                <select class="gw-form-select">
+                  <option>Corporate Office</option>
+                  <option>Bank / Financial Institution</option>
+                  <option>Hotel / Resort / Hospitality</option>
+                  <option>Hospital / Medical Center</option>
+                  <option>Educational Institution</option>
+                  <option>Manufacturing Plant</option>
+                  <option>Plantation Estate</option>
+                  <option>Other Organization</option>
+                </select>
+              </div>
+              <div class="gw-form-group">
+                <label class="gw-form-label">Required Product</label>
+                <select class="gw-form-select">
+                  <option>19L Dispenser Bottles + Dispensers</option>
+                  <option>19L Bottles Only (Have Own Dispensers)</option>
+                  <option>500ml Bottled Water (Cases)</option>
+                  <option>1000ml / 1500ml Bottled Water</option>
+                  <option>5000ml Large Cans</option>
+                  <option>Mixed Packaging Requirement</option>
+                </select>
+              </div>
+            </div>
+            <div class="gw-form-row">
+              <div class="gw-form-group">
+                <label class="gw-form-label">Estimated Monthly Quantity</label>
+                <input class="gw-form-input" placeholder="e.g. 50 bottles / 20 cases" type="text"/>
+              </div>
+              <div class="gw-form-group">
+                <label class="gw-form-label">Delivery Location / City *</label>
+                <input class="gw-form-input" placeholder="e.g. Kandy, Nawalapitiya, Colombo" required type="text"/>
+              </div>
+            </div>
+            <div class="gw-form-group">
+              <label class="gw-form-label">Specific Requirements or Message</label>
+              <textarea class="gw-form-textarea" placeholder="Tell us about your delivery schedule preferences or dispenser unit requirements..." rows="3"></textarea>
+            </div>
+            <button class="gw-form-submit" type="submit">
+              <span>Submit Inquiry</span>
+              <span class="material-symbols-outlined gw-icon">send</span>
+            </button>
+            <div class="gw-form-success" id="corporateFormSuccess">
+              Thank you! Your corporate inquiry has been submitted. Our commercial desk will contact you shortly.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- ==================== TAB 5: CONTACT US PAGE ==================== -->
+<main class="tab-content" id="tab-Contact Us">
+  <section class="gw-page-header">
+    <div class="gw-container">
+      <div class="gw-page-header-inner">
+        <span class="gw-page-header-subtitle">Get In Touch</span>
+        <h1 class="gw-page-header-title">Contact Galaboda Water</h1>
+        <p class="gw-page-header-desc">
+          Whether inquiring about home deliveries, commercial corporate supply, or visiting our Nawalapitiya bottling plant, our team is at your service.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Direct Contact Cards -->
+  <section class="gw-contact-cards-section">
+    <div class="gw-container">
+      <div class="gw-contact-cards-grid">
+        <div class="gw-contact-card">
+          <div>
+            <div class="gw-feature-icon-box" style="margin-bottom: 1rem;">
+              <span class="material-symbols-outlined">call</span>
+            </div>
+            <h3 class="gw-contact-card-title">Direct Phone Lines</h3>
+            <span class="gw-contact-card-caption">Monday Ã¢â‚¬â€œ Saturday: 8:00 AM Ã¢â‚¬â€œ 6:00 PM</span>
+            <div class="gw-contact-links-stack">
+              <a class="gw-contact-link" href="tel:0542222533">054 2222533 (Hotline)</a>
+              <a class="gw-contact-link" href="tel:0773655277">077 3655277 (Mobile / WhatsApp)</a>
+            </div>
+          </div>
+        </div>
+        <div class="gw-contact-card">
+          <div>
+            <div class="gw-feature-icon-box" style="margin-bottom: 1rem;">
+              <span class="material-symbols-outlined">mail</span>
+            </div>
+            <h3 class="gw-contact-card-title">Email Office</h3>
+            <span class="gw-contact-card-caption">For tenders, invoices, and distribution inquiries</span>
+            <a class="gw-contact-link" href="mailto:galabodawater1176@gmail.com" style="word-break: break-all;">
+              galabodawater1176@gmail.com
+            </a>
+          </div>
+        </div>
+        <div class="gw-contact-card">
+          <div>
+            <div class="gw-feature-icon-box" style="margin-bottom: 1rem;">
+              <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <h3 class="gw-contact-card-title">Bottling Plant Location</h3>
+            <p class="gw-contact-address">
+              No. 1176, Kuledrawatta, Bawwagama, Nawalapitiya, Sri Lanka
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Form & Map -->
+  <section class="gw-contact-form-section">
+    <div class="gw-container">
+      <div class="gw-contact-form-grid">
+        <!-- Contact Form -->
+        <div class="gw-contact-form-panel">
+          <h2 class="gw-form-title">Send Us a Direct Message</h2>
+          <p class="gw-form-subtitle">Have questions regarding pricing, retail dealership, or bulk quotes? Complete this form.</p>
+          <form class="gw-form" id="generalContactForm" onsubmit="handleGeneralContact(event)">
+            <div class="gw-form-group">
+              <label class="gw-form-label">Your Full Name *</label>
+              <input class="gw-form-input" placeholder="Enter full name" required type="text"/>
+            </div>
+            <div class="gw-form-group">
+              <label class="gw-form-label">Email Address *</label>
+              <input class="gw-form-input" placeholder="Enter email address" required type="email"/>
+            </div>
+            <div class="gw-form-group">
+              <label class="gw-form-label">Phone Number *</label>
+              <input class="gw-form-input" placeholder="Enter contact number" required type="tel"/>
+            </div>
+            <div class="gw-form-group">
+              <label class="gw-form-label">Your Message *</label>
+              <textarea class="gw-form-textarea" placeholder="How can Galaboda Water assist you today?" required rows="4"></textarea>
+            </div>
+            <button class="gw-form-submit" type="submit">
+              <span>Send Message</span>
+              <span class="material-symbols-outlined gw-icon">send</span>
+            </button>
+            <div class="gw-form-success" id="generalContactSuccess">
+              Message sent successfully! Our representative will respond promptly.
+            </div>
+          </form>
+        </div>
+        <!-- Location Map Card -->
+        <div>
+          <div class="gw-map-card">
+            <h3 class="gw-map-title">
+              <span class="material-symbols-outlined">pin_drop</span>
+              Plant &amp; Facility Coordinates
+            </h3>
+            <div class="gw-map-image-wrap">
+              <img class="gw-map-image" data-location="Nawalapitiya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuLqeDwpoc7mctFVuFsWGSN7C3EFqvr3cnIzMzVPYQeqpDWtDhnQunHh5g4DkOeerHAqAiDge7BcFWfKd5UnjISz43qjTUEClnnTXJuS9mcOYA7g1J7pEAGzuxCSopbvTrvdt822vMSk6WBxvVsjW23X1Tv7rcnI3u159Y2gDpJffPySZM4ffAhW6WKcDDPBggWCfZ4HLTOSQ7LVPvxoh_1Qbj4onFTs8cQPgzW5UF" alt="Nawalapitiya map"/>
+              <div class="gw-map-overlay">
+                <div class="gw-map-pin-card">
+                  <span class="material-symbols-outlined">location_on</span>
+                  <h4 class="gw-map-pin-title">Galaboda Water Bottling Plant</h4>
+                  <p class="gw-map-pin-desc">Kuledrawatta, Bawwagama, Nawalapitiya</p>
+                </div>
+              </div>
+            </div>
+            <div class="gw-map-footer">
+              <div>
+                <span class="gw-map-address-label">Registered Address</span>
+                <span class="gw-map-address-value">No. 1176, Kuledrawatta, Bawwagama, Nawalapitiya</span>
+              </div>
+              <a class="gw-map-directions-btn" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+                <span>Get Directions</span>
+                <span class="material-symbols-outlined gw-icon" style="font-size: 0.875rem;">directions</span>
+              </a>
+            </div>
+          </div>
+          <div class="gw-visit-info">
+            <h4 class="gw-visit-info-title">Facility Visits &amp; Audit Inspections</h4>
+            <p class="gw-visit-info-desc">
+              We welcome quality audit teams and corporate procurement inspectors. Prior appointment via telephone (054 2222533) is mandatory to ensure sterile clean-room access compliance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- ==================== GLOBAL FOOTER ==================== -->
+<footer class="gw-footer">
+  <div class="gw-container">
+    <div class="gw-footer-inner">
+      <div class="gw-footer-grid">
+        <!-- Brand & Bio -->
+        <div class="gw-footer-brand">
+          <div class="gw-footer-brand-row">
+            <img alt="Galaboda Water" class="gw-footer-logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGK2clLuk05qXx9JbcHi0CcfmUyPZwjgrTyIsPbNznE_nPVwSp9ecamenv4r8yDlAKdBsy0WM2aPUzE_d2DTs-iyw-gztZMjbEFoLTdLBW453mZr1vkHoFHQ2hgm6bLk8FAD1lVgk_GPEZn4XN93RCmze8eYgb32cd3ss-BGUuT1uJbPGxwZ63xVfNTEtd4CJV6mZizNroUN92fjiVviUrsakjws59UsvDbJj8e7VY"/>
+            <span class="gw-footer-brand-name">Galaboda Water</span>
+          </div>
+          <p class="gw-footer-brand-desc">
+            Pure hydration since May 2004. Bottled directly at our mountain facility in Kuledrawatta, Nawalapitiya, under strict registration with the Ministry of Health, Sri Lanka.
+          </p>
+          <div class="gw-footer-badges">
+            <span class="gw-footer-badge">Ministry of Health Certified</span>
+            <span class="gw-footer-badge">Est. May 2004</span>
+          </div>
+        </div>
+        <!-- Navigation Links -->
+        <div>
+          <h4 class="gw-footer-nav-title">Quick Links</h4>
+          <ul class="gw-footer-nav-list">
+            <li><button class="gw-footer-nav-btn" onclick="switchTab('Home')">Home</button></li>
+            <li><button class="gw-footer-nav-btn" onclick="switchTab('Products')">Products</button></li>
+            <li><button class="gw-footer-nav-btn" onclick="switchTab('About Us')">About Us</button></li>
+            <li><button class="gw-footer-nav-btn" onclick="switchTab('Corporate')">Corporate Supply</button></li>
+            <li><button class="gw-footer-nav-btn" onclick="switchTab('Contact Us')">Contact Us</button></li>
+          </ul>
+        </div>
+        <!-- Bottle Sizes -->
+        <div>
+          <h4 class="gw-footer-nav-title">Bottle Sizes</h4>
+          <ul class="gw-footer-nav-list">
+            <li>500ml Bottled Water</li>
+            <li>1000ml Standard Bottle</li>
+            <li>1500ml Daily Hydration</li>
+            <li>5000ml (5L) Large Can</li>
+            <li>19L Dispenser Jar</li>
+            <li>Hot &amp; Cold Dispensers</li>
+          </ul>
+        </div>
+        <!-- Factory Address & Direct Lines -->
+        <div class="gw-footer-contact">
+          <h4 class="gw-footer-nav-title">Bottling Plant</h4>
+          <p class="gw-footer-address">No. 1176, Kuledrawatta, Bawwagama,<br/>Nawalapitiya, Central Province, Sri Lanka.</p>
+          <div class="gw-footer-contact-row">
+            <span class="material-symbols-outlined gw-footer-contact-icon">call</span>
+            <span>Hotline: <a class="gw-footer-contact-link" href="tel:0542222533">054 2222533</a></span>
+          </div>
+          <div class="gw-footer-contact-row">
+            <span class="material-symbols-outlined gw-footer-contact-icon">smartphone</span>
+            <span>Mobile: <a class="gw-footer-contact-link" href="tel:0773655277">077 3655277</a></span>
+          </div>
+          <div class="gw-footer-contact-row">
+            <span class="material-symbols-outlined gw-footer-contact-icon">mail</span>
+            <a class="gw-footer-contact-link" href="mailto:galabodawater1176@gmail.com" style="word-break: break-all;">galabodawater1176@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Copyright -->
+      <div class="gw-footer-bottom">
+        <p class="gw-footer-copy">Ã‚Â© 2004Ã¢â‚¬â€œ2025 Galaboda Water. All rights reserved. Registered Bottled Water Manufacturer under Ministry of Health, Sri Lanka. Kuledrawatta, Bawwagama, Nawalapitiya.</p>
+        <div class="gw-footer-bottom-links">
+          <span class="gw-footer-bottom-link">Pure Hydration Est. May 2004</span>
+          <span class="gw-footer-bottom-link">Central Province, Sri Lanka</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Vanilla JavaScript for Multi-Page Tab Switching & Mobile Drawer -->
+<script>
+    // Tab switching logic for multi-page simulation
+    function switchTab(tabName) {
+      // 1. Hide all tab content panes
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+
+      // 2. Show targeted tab
+      const targetTab = document.getElementById('tab-' + tabName);
+      if (targetTab) {
+        targetTab.classList.add('active');
+      }
+
+      // 3. Update Desktop Navigation Styles
+      const desktopNavItems = document.querySelectorAll('#desktopNavLinks .gw-nav-link');
+      desktopNavItems.forEach(item => {
+        if (item.getAttribute('data-nav') === tabName) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      // 4. Update Mobile SideNav Styles
+      const sideNavItems = document.querySelectorAll('.gw-side-nav-item');
+      sideNavItems.forEach(item => {
+        if (item.getAttribute('data-side') === tabName) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      // 5. Close Mobile Drawer if open
+      closeMobileDrawer();
+
+      // 6. Scroll window to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Mobile Drawer Controls
+    const mobileDrawer = document.getElementById('sideDrawer');
+    const drawerBackdrop = document.getElementById('sideDrawerBackdrop');
+    const mobileMenuOpenBtn = document.getElementById('mobileMenuOpenBtn');
+    const mobileMenuCloseBtn = document.getElementById('mobileMenuCloseBtn');
+
+    function openMobileDrawer() {
+      drawerBackdrop.classList.add('gw-drawer-open');
+      setTimeout(() => {
+        mobileDrawer.classList.add('gw-drawer-open');
+      }, 10);
+    }
+
+    function closeMobileDrawer() {
+      mobileDrawer.classList.remove('gw-drawer-open');
+      setTimeout(() => {
+        drawerBackdrop.classList.remove('gw-drawer-open');
+      }, 300);
+    }
+
+    if (mobileMenuOpenBtn) mobileMenuOpenBtn.addEventListener('click', openMobileDrawer);
+    if (mobileMenuCloseBtn) mobileMenuCloseBtn.addEventListener('click', closeMobileDrawer);
+    if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeMobileDrawer);
+
+    // Form Mock Submissions
+    function handleCorporateSubmit(e) {
+      e.preventDefault();
+      const successDiv = document.getElementById('corporateFormSuccess');
+      if (successDiv) {
+        successDiv.classList.add('visible');
+        e.target.reset();
+        setTimeout(() => {
+          successDiv.classList.remove('visible');
+        }, 6000);
+      }
+    }
+
+    function handleGeneralContact(e) {
+      e.preventDefault();
+      const successDiv = document.getElementById('generalContactSuccess');
+      if (successDiv) {
+        successDiv.classList.add('visible');
+        e.target.reset();
+        setTimeout(() => {
+          successDiv.classList.remove('visible');
+        }, 6000);
+      }
+    }
+  </script>
+</body></html>
